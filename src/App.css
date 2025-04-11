@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #4532FC;
+  --text-color: #121D2D;
+  --content-color: #616161;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+.navbar-menu{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%; 
+    letter-spacing: 0;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+
+
+.navbar-menu:hover{
+  color: black;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+footer h3{
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+footer p.content{
+  font-weight:400 ;
+  font-size:14px ;
+  line-height: 160%;
+}
+
+footer li{
+  font-weight:400 ;
+  font-size:14px ;
+  line-height: 24px;  
+}
+
+.navbar-sm-menu:hover{
+  color: black;
+}
+
+
+@media (min-width: 911px) and (max-width: 1024px)  {
+  .navbar-menu {
+    font-size: 16px;
+    font-weight: 500;
+
+  }
+    .navbar-sm-menu {
+      display: none;
+    }
+  
+}
+
+
+@media (max-width: 912px) {
+  .navbar-menu {
+    display: block;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section{
+
+      display: none;
+    }
+
+    .hero-section-text{
+      margin-top: 75px;
+    }
+  }
