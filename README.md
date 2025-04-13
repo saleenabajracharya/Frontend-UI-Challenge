@@ -95,7 +95,7 @@ A simple yet functional **Task Management** system with the following features:
 
   **Install Dependencies**
 - Make sure you have Node.js and npm installed.
-      npm install
+- npm install
   
 **Start the Development Server**
 - npm run dev
