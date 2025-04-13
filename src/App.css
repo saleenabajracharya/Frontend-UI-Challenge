@@ -52,6 +52,29 @@ footer li{
   color: black;
 }
 
+.card-title {
+  position: relative;
+  display: inline-block;
+}
+.card-title::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #E53FB6;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+.card:hover .card-title::after {
+  width: 100%;
+}
+
+.react-phone-input input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #9E9E9E !important; 
+}
 
 @media (min-width: 911px) and (max-width: 1024px)  {
   .navbar-menu {
@@ -72,6 +95,10 @@ footer li{
       font-size: 15px;
       font-weight: 400;
     }
+
+    .hero-section-text{
+      margin-left: 0;
+    }
   }
 
   @media (max-width: 768px) {
@@ -81,6 +108,15 @@ footer li{
     }
 
     .hero-section-text{
-      margin-top: 75px;
+      margin-top: 50px;
+      margin-left: 0;
     }
+  }
+
+  @media (max-width: 500px) {
+    .hero-section-text{
+      margin-top: 0;
+      
+    }
+
   }

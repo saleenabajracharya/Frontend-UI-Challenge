@@ -1,27 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import {Navbar} from './components/Navbar'
-import {HeroSection} from './components/Herosection'
-import {FeatureGrid} from './components/FeatureGrid'
-import {TaskManager} from './components/TaskManager'
-import {ContactForm} from './components/ContactForm'
-import { Footer } from './components/Footer'
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+// ✅ Lazy-load route components
+const Navbar = lazy(() => import('./components/Navbar'));
+const HeroSection = lazy(() => import('./components/Herosection'));
+const FeatureGrid = lazy(() => import('./components/FeatureGrid'));
+const TaskManager = lazy(() => import('./components/TaskManager'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='overflow-x-hidden'>
-     <Navbar/>
-     <HeroSection/>
-     <FeatureGrid/>
-     <TaskManager/>
-     <ContactForm/>
-     <Footer/>
-    </div>
-  )
+    <Router>
+      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroSection />
+              <FeatureGrid />
+              <TaskManager />
+              <ContactForm />
+            </>
+          } />
+        </Routes>
+        <Footer />
+      </Suspense>
+    </Router>
+  );
 }
 
-export default App
+export default App;
