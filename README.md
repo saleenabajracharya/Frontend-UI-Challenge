@@ -82,6 +82,8 @@ A simple yet functional **Task Management** system with the following features:
 
 - Modular folder structure with clear separation of components.
 - Semantic HTML for **accessibility** and **SEO**.
+- ![image](https://github.com/user-attachments/assets/3ccafa22-c801-4a13-8b95-427e22eb0ee5)
+
 - Consistent naming conventions and **Tailwind CSS** utility classes for maintainable styling.
 
 ---
