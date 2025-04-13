@@ -76,6 +76,12 @@ footer li{
   border-color: #9E9E9E !important; 
 }
 
+.custom-toast {
+  width: 395px !important;
+  margin: auto;
+  text-align: center;
+}
+
 @media (min-width: 911px) and (max-width: 1024px)  {
   .navbar-menu {
     font-size: 16px;

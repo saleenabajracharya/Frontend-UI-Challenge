@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { ToastContainer, toast } from "react-toastify";
 export const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
@@ -17,12 +18,17 @@ export const TaskManager = () => {
   };
 
   const addTask = () => {
-    if (newTask.trim() === "") return;
+    if (newTask.trim() === ""){
+      toast.warning("Please enter a task before adding!");
+      return;
+    } 
+
     const updatedTasks = [
       ...tasks,
       { id: Date.now(), text: newTask, completed: false },
     ];
     saveTasksToStorage(updatedTasks);
+    toast.success("Task added successfully!")
     setNewTask("");
   };
 
@@ -34,9 +40,18 @@ export const TaskManager = () => {
   };
 
   const deleteTasks = () => {
+    const completedTasks = tasks.filter((task) => task.completed);
+  
+    if (completedTasks.length === 0) {
+      toast.warning("No completed task selected to delete!");
+      return;
+    }
+  
     const remainingTasks = tasks.filter((task) => !task.completed);
     saveTasksToStorage(remainingTasks);
+    toast.success(" Completed tasks deleted!");
   };
+  
 
   return (
     <>

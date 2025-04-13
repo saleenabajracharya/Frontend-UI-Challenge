@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// ✅ Lazy-load route components
 const Navbar = lazy(() => import('./components/Navbar'));
 const HeroSection = lazy(() => import('./components/Herosection'));
 const FeatureGrid = lazy(() => import('./components/FeatureGrid'));
@@ -22,10 +23,18 @@ function App() {
               <FeatureGrid />
               <TaskManager />
               <ContactForm />
+              <ToastContainer position="top-center" 
+              autoClose={1200} 
+              hideProgressBar={true}  
+              newestOnTop={false}
+              closeOnClick                     
+              closeButton={true}             
+              toastClassName="custom-toast"/>
             </>
           } />
         </Routes>
         <Footer />
+        
       </Suspense>
     </Router>
   );
